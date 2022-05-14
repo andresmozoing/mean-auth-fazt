@@ -1,0 +1,25 @@
+package.json = Sirve para poder crear el proyecto de nuevo, y saber que dependencias usa
+
+express = es un modulo de npm q me permite crear el servidor de forma sencilla
+
+mongoose = es un modulo de npm q me sirve para conectarme a mongodb y modelar los datos
+
+cors = es un modulo de npm q me permite comiunicar el servidor de angular con el servidor de node (el servidor del front con el del back)
+
+jsonwebtoken = es un modulo de npm q nos sirve para poder generar y enviar un token desde el servidor a los clientes o usuarios q van a pedir cosas al servidor. 
+Algunso datos no deberian ser dados por el servidor, el jwt . El jwt va a generar un token y se lo va a dar al usuario si este tiene permiso. Cada vez q pida algo, la app se va a fijar en ese token.
+
+Para correr la app:
+COMANDO:
+node src/index.js 
+
+Instalacion MongoDB:
+
+C:\Program Files\MongoDB\Server\5.0\bin
+mongod.exe es el servidor. Poner el comando "mongod" en una consola, levanta el servidor.
+mongo.exe es el cliente. Poner el comando "mongo" en una consola, levanta el cliente.
+
+usando nodemon me ayuda a no tener q pararlo y guardarlo y correrlo de nuevo
+
+
+

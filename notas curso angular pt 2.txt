@@ -1,0 +1,50 @@
+la etiqueta <router-outlet> del html de app.component es muy importante, sirve para enrutar
+
+para crear componente uso el comando "ng generate component" o su forma abreviada ng g c
+ng g c components/signup 
+
+
+Para agregar un cdn de bootstrap voy al index.html que esta en la carpeta src y agrego un <link rel="stylesheet" href="LINK ACA">
+
+para la vista gral, uso una plantilla de bootstrap y la cambio un poco
+para cambiar el funcionamiento de los botones, lo q hizo es agregarle la propiedad routerLink a los botones
+
+agregando la propiedad [(ngModel)]="user.password" en el input de password, lo q hace es q cada vez q rellene este campo, va a modelarlo dinamicamente en esa propiedad del user
+
+lso servicios se comunican con el server del backend, y los componentes usan los metodos de los servicios
+
+Subscribe() es un método en Angular que conecta el observer con eventos observable. Siempre que se realiza algún cambio en estos observables, se ejecuta un código y observa los resultados o cambios mediante el método subscribe. Subscribe() es un método de la biblioteca rxjs, utilizado internamente por Angular.
+
+https://www.delftstack.com/es/howto/angular/angular-subscribe/
+
+Observable.subscribe (observer)
+
+this.authService.signUp(this.user)
+      .subscribe({ //Este subscribe
+        next: (res) => {
+          console.log(res);
+        }
+        ,
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    )
+
+
+para proteger rutas, se utilizan "Guards", q se crean con este comando
+ng g g nombreDelGuard
+
+la opcion CanActivate
+
+en la clase guard, hay que declarar el metodo canActivate() que devuelve true o false. Este metodo va a utilizar algun metodo del authService que diga si esta logueado o no. 
+
+agregar el guard al app.module (importarlo y agregarlo en los providers)
+en app-routing.module ,importamos el Guard, y  en las rutas q qramos proteger, agregar la propiedad canActivate: [guard's q qremos q verifiq]
+
+
+para mostrar o no una etiqueta del HTML se puede usar algo como esto (dentro de un ngContainer creo)
+*ngIf = "!authService.loggedIn(); else loggedIn"
+
+loggedIn es el id de otra etiqueta
+<ng-template #loggedIn>
